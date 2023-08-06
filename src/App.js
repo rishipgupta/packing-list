@@ -24,7 +24,7 @@ function App() {
       <Logo />
       <Form onAddItems={handleAddItems} />
       <TravelList items={items} onDeleteItems={handleDeleteItems} onPackedItems={handlePackedItems} />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 }
