@@ -19,11 +19,15 @@ function App() {
     setItems(items => items.map(item => item.id === id ? { ...item, packed: !item.packed } : item))
   }
 
+  const handleClearList = () => {
+    setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <TravelList items={items} onDeleteItems={handleDeleteItems} onPackedItems={handlePackedItems} />
+      <TravelList items={items} onDeleteItems={handleDeleteItems} onPackedItems={handlePackedItems} clearListItems={handleClearList} />
       <Stats items={items} />
     </div>
   );
