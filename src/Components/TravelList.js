@@ -16,12 +16,15 @@ const TravelList = ({ items, onDeleteItems, onPackedItems, clearListItems }) => 
     sortedItems = items.slice().sort((a, b) => Number(a.packed) - Number(b.packed));
   }
 
+
+
+
   return (
     <div className='list'>
       <ul>
         {sortedItems.map((item) => <Item item={item} key={item.id} onDeleteItems={onDeleteItems} onPackedItems={onPackedItems} />)}
       </ul>
-      <div>
+      <div className='actions'>
         <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
           <option value="input">Sort by input</option>
           <option value="description">Sort by description</option>
